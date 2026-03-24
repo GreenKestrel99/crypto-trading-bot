@@ -17,8 +17,8 @@ A modular, production-ready Python framework for building automated cryptocurren
 
 ```
 ┌─────────────────────────────────────────────┐
-│                   main.py                    │
-│              (Orchestrator)                  │
+│                   main.py                   │
+│              (Orchestrator)                 │
 ├──────────┬──────────┬───────────┬───────────┤
 │  Data    │ Strategy │  Order    │   Risk    │
 │  Feed    │  Engine  │  Manager  │  Manager  │
