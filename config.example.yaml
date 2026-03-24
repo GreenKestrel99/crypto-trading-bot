@@ -1,0 +1,30 @@
+# Crypto Trading Bot Configuration
+# Copy to config.yaml and fill in your details
+
+exchange:
+  id: binance              # Any CCXT-supported exchange
+  api_key: ""              # Your API key  
+  secret: ""               # Your API secret
+  sandbox: true            # true = testnet, false = live trading
+
+trading:
+  symbol: BTC/USDT         # Trading pair
+  mode: dry-run            # dry-run | live
+  strategy: momentum       # Strategy module name in strategies/
+  poll_interval: 1.0       # Seconds between data updates (REST mode)
+
+risk:
+  max_position_usd: 1000   # Maximum total position value
+  max_daily_loss_usd: 50   # Stop trading after this daily loss
+  max_open_orders: 3       # Maximum concurrent open orders
+  cooldown_seconds: 30     # Minimum seconds between trades
+  order_timeout: 60        # Cancel unfilled orders after N seconds
+
+strategy_params:           # Passed to your strategy's setup()
+  lookback: 20
+  threshold: 0.02
+
+logging:
+  level: INFO              # DEBUG | INFO | WARNING | ERROR
+  trade_journal: true      # Log trades to CSV
+  log_dir: ./logs
